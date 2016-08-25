@@ -1,0 +1,13 @@
+﻿@import "_colors.scss";
+
+.panel-table {
+    margin-bottom:0px;
+    .top {
+        border-top: none;
+    }
+}
+
+.table-label {
+    text-align: left;
+    color: $md-blue-grey-400;
+}

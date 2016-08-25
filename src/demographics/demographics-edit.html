@@ -1,0 +1,162 @@
+﻿<div class="row">
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Basic</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form ng-hide="vm.isLoading">
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>First Name</label>
+                                    <input placeholder="e.g. Harry" ng-model="vm.patientShellService.currentPatient.givenName" class="form-control" />
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Last Name</label>
+                                    <input placeholder="e.g. Potter" ng-model="vm.patientShellService.currentPatient.familyName" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-6">
+                                    <label>Middle Name(s)</label>
+                                    <input placeholder="e.g. James" ng-model="vm.patientShellService.currentPatient.middleNames" class="form-control" />
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label>Preferred Name</label>
+                                    <input placeholder="e.g. Hazza" ng-model="vm.patientShellService.currentPatient.preferredName" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-lg-4">
+                                    <label>Title</label>
+                                    <select class="form-control" ng-model="vm.patientShellService.currentPatient.title">
+                                        <option ng-repeat="title in vm.titleOptions" value="{{title}}">{{title}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label>Gender</label>
+                                    <select class="form-control" ng-model="vm.patientShellService.currentPatient.gender">
+                                        <option ng-repeat="gender in vm.genderOptions" value="{{gender}}">{{gender}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <label class="control-label">Birthday</label>
+                                    <input class="form-control" type="text" ng-model="vm.patientShellService.currentPatient.dateOfBirth" />
+                                </div>
+                            </div>
+                        </form>
+                        <div ng-show="vm.isLoading" class="loader-container"><i class="fa fa-2x fa-spinner fa-pulse loader"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Entitlements</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Medicare Card No.</label>
+                                    <input class="form-control" ng-model="vm.patientShellService.currentPatient.medicareCardNumber" />
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label>Position</label>
+                                    <input placeholder="e.g. 2" class="form-control" ng-model="vm.patientShellService.currentPatient.medicarePosition" />
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label>Expiry</label>
+                                    <input placeholder="e.g. 02/2017" class="form-control" ng-model="vm.patientShellService.currentPatient.medicareCardExpiry" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label>DVA Card No.</label>
+                                <input class="form-control" ng-model="vm.patientShellService.currentPatient.dvaCardNumber" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Contact</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-xs-12 col-lg-4">
+                        <label>Mobile phone</label>
+                        <input type="text" class="form-control" placeholder="e.g. 0400 123 123" ng-model="vm.patientShellService.currentPatient.mobilePhoneNumber.value" />
+                    </div>
+                    <div class="form-group col-xs-12 col-lg-4">
+                        <label class="control-label">Home Phone</label>
+                        <input type="text" ng-model="vm.patientShellService.currentPatient.homePhoneNumber.value" class="form-control" placeholder="e.g. 9800 1234" />
+                    </div>
+                    <div class="form-group col-xs-12 col-lg-4">
+                        <label>Work Phone</label>
+                        <input type="text" ng-model="vm.patientShellService.currentPatient.patientWorkPhone.value" class="form-control" placeholder="e.g. 9800 1234" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input ng-model="vm.patientShellService.currentPatient.emailAddress.emailValue" class="form-control" placeholder="e.g. harry@hogwarts.com.au" />
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label>Preferred</label>
+                            <select ng-model="vm.preferredContact" class="form-control">
+                                <option ng-repeat="contact in vm.contactOptions" value="{{contact}}">{{contact}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="checkbox" /> Receive SMS reminders
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="control-label">Residential Address</label>
+                            <input class="form-control" placeholder="e.g. 4/24 Cupboard Street Malvern" ng-model="vm.patientShellService.currentPatient.residentialAddressLine1" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label>Postal Address</label>
+                            <input class="form-control" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <button ng-disabled="vm.isLoading" ng-click="vm.savePatient()" class="btn btn-success btn-lg save-btn">
+            <i ng-hide="vm.isLoading" class="fa fa-save"></i>
+            <i ng-show="vm.isLoading" class="fa fa-pulse fa-spinner"></i> Save
+        </button>
+        <button class="btn btn-default btn-lg"><i class="fa fa-ban"></i> Cancel</button>
+    </div>
+</div>

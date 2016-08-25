@@ -1,0 +1,52 @@
+﻿<div class="row">
+    <div class="col-lg-3">
+        <button class="btn btn-default" ng-click="vm.saveAllergy()">Save Allergy</button>
+        <button class="btn btn-default" ui-sref="patient.detail.allergies.view">Cancel</button>
+    </div>
+</div>
+<div class="row">
+    <form>
+        <div class="col-lg-8">
+            <h4 class="h4">New Allergy</h4>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <label>Substance</label>
+                            <input class="form-control" ng-model="vm.currentAllergy.substance" />
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>Type</label>
+                            <select class="form-control" ng-model="vm.currentAllergy.type">
+                                <option ng-repeat="type in vm.allergiesDetailService.allergyReactionTypes" value="{{type}}">
+                                    {{type}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-6">
+                            <label>Clinical manifestation</label>
+                            <input class="form-control" ng-model="vm.currentAllergy.clinicalManifestation" />
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <label>Severity</label>
+                            <select class="form-control" ng-model="vm.currentAllergy.severity">
+                                <option ng-repeat="severity in vm.allergiesDetailService.allergySeverityOptions" value="{{severity}}">
+                                    {{severity}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-12">
+                            <label>Note</label>
+                            <textarea class="form-control" rows="3" ng-model="vm.currentAllergy.note"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

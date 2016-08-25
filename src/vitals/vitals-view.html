@@ -1,0 +1,33 @@
+﻿<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Blood Pressure</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.vitals-edit"><i class="fa fa-plus"></i> Add</button>
+            </div>
+            <div class="panel-body">
+                <highchart id="chart1" config="vm.bloodPressureConfig"></highchart>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Heart Rate</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.vitals-edit({vitalsId: 0})"><i class="fa fa-plus"></i> Add</button>
+            </div>
+            <div class="panel-body">
+                <highchart id="chart1" config="vm.heartRateConfig"></highchart>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Temperature</h4>
+            </div>
+        </div>
+    </div>
+</div>

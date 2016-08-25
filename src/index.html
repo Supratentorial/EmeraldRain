@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="/">
+    <meta charset="utf-8">
+    <title>FountainJS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="http://fountainjs.io/assets/imgs/fountain.png" />
+  </head>
+
+  <body ng-app="app">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" ui-sref="dashboard">IvoryPacket</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"><a ui-sref="dashboard">Dashboard</a></li>
+                <li ui-sref-active="active"><a ui-sref="patient">Patients</a></li>
+                <li ui-sref-active="active"><a ui-sref="appointments">Appointments</a></li>
+                <li ui-sref-active="active"><a ui-sref="settings">Settings</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid" ui-view></div>
+  </body>
+</html>

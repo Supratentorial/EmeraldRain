@@ -1,0 +1,70 @@
+@import "./styles/_colors.scss";
+@import "./styles/_variables.scss";
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "./styles/_button-groups.scss";
+@import "./styles/_navs.scss";
+@import "./styles/_panels.scss";
+@import "./styles/_banner.scss";
+@import "./styles/_calendar.scss";
+@import "./styles/_table.scss";
+@import "./styles/_loaders.scss";
+@import "./styles/_buttons.scss";
+
+body {
+    background: $md-blue-grey-50;
+    padding-top: 50px;
+}
+
+.active-top-level {
+    color: $md-deep-orange-900 !important;
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    background: $md-blue-grey-900;
+}
+
+.list-item-name {
+    font-size: 1.15em;
+}
+
+.list-item-subtext {
+    color: $md-grey-500;
+}
+
+.patient-list-item {
+    cursor: pointer;
+    padding: 0.5em;
+
+    &:hover {
+        background: $md-blue-grey-50;
+        border-left: solid 0.25em $md-deep-orange-800;
+    }
+}
+
+.patient-profile-picture {
+    width: 120px;
+    height: 120px;
+}
+
+.summary-icon{
+    width:30px;
+    margin-bottom:5px;
+}
+
+.banner-icon{
+    width:30px;
+}
+
+.summary-text{
+    font-size: 15px;
+}
+

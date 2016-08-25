@@ -1,0 +1,85 @@
+﻿<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Edit Smoking</h4>
+            </div>
+            <div class="panel-body">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label">Smoking status</label>
+                        <div>
+                            <label class="radio-inline"> <input type="radio" name="smoking" value="Never smoked" ng-model="vm.patientShellService.currentPatient.smokingHistory.smokingStatus"> Never smoked </label>
+                            <label class="radio-inline"> <input type="radio" name="smoking" value="Ex-smoker" ng-model="vm.patientShellService.currentPatient.smokingHistory.smokingStatus"> Ex-smoker </label>
+                            <label class="radio-inline"> <input type="radio" name="smoking" value="Current smoker" ng-model="vm.patientShellService.currentPatient.smokingHistory.smokingStatus"> Current smoker </label>
+                            <label class="radio-inline"> <input type="radio" name="smoking" value="Passive smoke" ng-model="vm.patientShellService.currentPatient.smokingHistory.smokingStatus" /> Passive smoker </label>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="vm.patientShellService.currentPatient.smokingHistory.smokingStatus == 'Ex-smoker' || vm.patientShellService.currentPatient.smokingHistory.smokingStatus == 'Current smoker'">
+                        <div class="form-group col-lg-3">
+                            <label class="control-label">Cigarettes/day</label>
+                            <input class="form-control" ng-model="vm.patientShellService.currentPatient.smokingHistory.cigarettesPerDay" />
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label class="control-label">Age started</label>
+                            <input class="form-control" ng-model="vm.patientShellService.currentPatient.smokingHistory.ageSmokingCommenced" />
+                        </div>
+                        <div class="form-group col-lg-3">
+                            <label class="control-label">Age ceased</label>
+                            <input ng-model="vm.patientShellService.currentPatient.smokingHistory.ageSmokingCeased" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row" ng-show="vm.patientShellService.currentPatient.smokingHistory.smokingStatus == 'Ex-smoker' || vm.patientShellService.currentPatient.smokingHistory.smokingStatus == 'Current smoker'">
+                        <div class="form-group col-lg-12">
+                            <label class="control-label">Notes</label>
+                            <input class="form-control" ng-model="vm.patientShellService.currentPatient.smokingHistory.smokingNotes" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Edit Alcohol</h4>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="control-label">Daily alcohol intake</label>
+                    <div>
+                        <label class="radio-inline"> <input type="radio" name="smoking" value="never"> Teetotaler </label>
+                        <label class="radio-inline"> <input type="radio" name="smoking" value="ex-smoker"> Ex-smoker </label>
+                        <label class="radio-inline"> <input type="radio" name="smoking" value="current"> Current smoker </label>
+                        <label class="radio-inline"> <input type="radio" name="smoking" value="passive" /> Passive smoker </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Edit Drugs</h4>
+            </div>
+            <div class="panel-body">
+                <form>
+                    
+                    <div class="form-group">
+                        <label class="control-label">Notes</label>
+                        <input class="form-control" ng-model="vm.patientShellService.currentPatient.drugHistory.drugNotes" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <button class="btn btn-lg btn-success save-btn" ng-click="vm.saveSocialHistoryObservations()" ng-disabled="vm.isLoading">
+    <i class="fa fa-save"></i>
+    <i class="fa fa-spinner fa-pulse" ng-show="vm.isLoading"></i> Save</button>
+    <button class="btn btn-lg btn-default"><i class="fa fa-ban"></i> Cancel</button>
+</div>

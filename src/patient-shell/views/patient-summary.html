@@ -1,0 +1,71 @@
+﻿<div class="row">
+    <div class="col-lg-5 col-md-9 col-sm-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Basic Details</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.demographics-edit"><i class="fa fa-pencil"></i> Edit</button>
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <div class="media-left media-top">
+                        <img class="media-object media-left patient-profile-picture" src="images/user-icon.svg" />
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{vm.patientShellService.currentPatient.fullName}}</h4>
+                        <div>
+                            <img class="summary-icon" src="images/birthday-icon.svg" />
+                            <span class="summary-text">{{vm.patientShellService.currentPatient.dateOfBirth | date:'dd/MM/yyyy' || "Not recorded."}} ({{vm.patientShellService.currentPatient.age}})</span>
+                            <img ng-show="vm.patientShellService.currentPatient.gender == 'Male'" class="summary-icon" src="images/male-icon.svg" />
+                            <img ng-show="vm.patientShellService.currentPatient.gender == 'Female'" class="summary-icon" src="images/female-icon.svg"/>
+                            <span class="summary-text">{{vm.patientShellService.currentPatient.gender || "Not recorded."}}</span>
+                        </div>
+                        <div>
+                            <img class="summary-icon" src="images/mobile-phone-icon.svg" />
+                            <span class="summary-text">{{vm.patientShellService.currentPatient.mobilePhoneNumber.value || "Not recorded."}}</span>
+                            <img class="summary-icon" src="images/home-phone-icon.svg" />
+                            <span class="summary-text">{{vm.patientShellService.currentPatient.homePhoneNumber.value || "Not recorded."}}</span>
+                            <img class="summary-icon" src="images/work-phone-icon.svg" />
+                            <span class="summary-text">{{vm.patientShellService.currentPatient.workPhoneNumber.value || "Not recorded."}}</span>
+                        </div>
+                        <div>
+                            <img class="summary-icon" src="images/home-icon.svg" />
+                            <span class="summary-text">{{vm.address.value || "Not recorded."}}</span>
+                        </div>
+                        <div>
+                            <img class="summary-icon" src="images/email-icon.svg" />
+                            <span class="summary-text">{{vm.patientShellService.currentPatient.emailAddress.emailValue || "Not recorded."}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Active Problems</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.medicalhistory-view"><i class="fa fa-pencil"></i> Edit</button>
+            </div>
+            <div class="panel-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Current Medications</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.scripts-view"><i class="fa fa-pencil"></i> Edit</button>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <span>Aspirin</span><span style="color:lightgray">100mg daily orally</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

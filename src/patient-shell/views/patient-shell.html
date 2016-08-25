@@ -1,0 +1,64 @@
+﻿<div class="row">
+    <nav>
+        <ul class="nav nav-tabs">
+            <li ui-sref-active="active" role="presentation" ng-repeat="patient in vm.patientShellService.openPatients"><a ui-sref="patient.detail({patientId : {{patient.patientId}}})">{{patient.fullName}}</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="row">
+    <div id="patientBanner" class="col-lg-12 banner">
+        <div>
+            <h4>{{vm.patientShellService.currentPatient.fullName}}</h4>
+            <div>
+                <img class="banner-icon" src="images/birthday-icon.svg" />
+                <a class="content" ui-sref="patient.detail.demographics-edit"> {{(vm.patientShellService.currentPatient.dateOfBirth | date: 'dd/MM/yyyy')}} ({{vm.patientShellService.currentPatient.age}})</a>
+                <img ng-show="vm.patientShellService.currentPatient.gender == 'Male'" class="banner-icon" src="images/male-icon.svg" />
+                <img ng-show="vm.patientShellService.currentPatient.gender == 'Female'" class="banner-icon" src="images/female-icon.svg" />
+                <a class="content" ui-sref="patient.detail.demographics-edit"> {{vm.patientShellService.currentPatient.gender}}</a>
+            </div>
+        </div>
+        <div class="vertical-divider"></div>
+        <div>
+            <div>
+                <img class="banner-icon" src="images/mobile-phone-icon.svg" />
+                <a class="content" ui-sref="patient.detail.demographics-edit">{{vm.patientShellService.currentPatient.mobilePhoneNumber.value || 'Record mobile number'}}</a>
+            </div>
+            <div>
+                <img class="banner-icon" src="images/home-icon.svg" />
+                <a class="content" ui-sref="patient.detail.demographics-edit">{{vm.patientShellService.currentPatient.address || 'Record address'}}</a>
+            </div>
+        </div>
+        <div class="vertical-divider"></div>
+        <label>Alerts</label>
+        <div class="vertical-divider"></div>
+        <div>
+            <img class="banner-icon" src="images/current-smoker-icon.svg" />
+            <img class="banner-icon" src="images/ex-smoker-icon.svg" />
+            <img class="banner-icon" src="images/never-smoked-icon.svg" />
+            <a class="content">Current smoker</a>
+        </div>
+        <div>
+            <img class="banner-icon" src="images/no-alcohol-icon.svg" />
+            <img class="banner-icon" src="images/heavy-alcohol-icon.svg" />
+            <a class="content">No alcohol</a>
+        </div>
+
+    </div>
+</div>
+<div style="overflow: auto; margin-bottom: 60px" class="row">
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+        <div class="list-group">
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.summary">Summary</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.encounters-view">Encounters</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.investigations-view">Investigations</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.scripts-view">Scripts</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.vitals-view">Vitals</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.documents-view">Documents</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.medicalhistory-view">Medical History</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.social-history-view">Social & Family History</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.allergies-view">Allergies & Intolerances</a>
+            <a class="list-group-item" ui-sref-active="active" ui-sref="patient.detail.immunisations-view"><i></i>Immunisations</a>
+        </div>
+    </div>
+    <div ui-view class="col-lg-10"></div>
+</div>

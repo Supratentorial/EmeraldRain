@@ -1,0 +1,78 @@
+﻿<div class="row">
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Substance Use</h4>
+                        <button class="btn btn-default" ui-sref="patient.detail.substance-use-edit"><i class="fa fa-pencil"></i> Edit</button>
+                    </div>
+                    <div class="panel-body no-padding">
+                        <table class="table panel-table">
+                            <tr>
+                                <td class="table-label top">Smoking status</td>
+                                <td class="top">{{vm.patientShellService.currentPatient.smokingHistory.smokingStatus || 'Not recorded.'}}</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Cigarettes/Day</td>
+                                <td>{{vm.patientShellService.currentPatient.smokingHistory.cigarettesPerDay || 'Not recorded.'}}</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Years smoking</td>
+                                <td>{{vm.yearsSmoking || 'Not recorded.'}}</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Alcohol consumption</td>
+                                <td>{{vm.patientShellService.currentPatient.alcoholHistory.alcoholStatus || 'Not recorded.'}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Social Details</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.social-history-edit"><i class="fa fa-pencil"></i> Edit</button>
+            </div>
+            <div class="panel-body no-padding">
+                <table class="table panel-table">
+                    <tr>
+                        <td class="top table-label">Occupation</td>
+                        <td class="top">{{vm.patientShellService.currentPatient.socialHistory.occupation || 'Not recorded.'}}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Marital Status</td>
+                        <td>{{vm.patientShellService.currentPatient.socialHistory.maritalStatus || 'Not recorded.'}}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Ethnicity</td>
+                        <td>{{vm.patientShellService.currentPatient.socialHistory.ethnicity || 'Not recorded.'}}</td>
+                    </tr>
+                    <tr>
+                        <td class="table-label">Religion</td>
+                        <td>{{vm.patientShellService.currentPatient.socialHistory.religion || 'Not recorded.'}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Family History</h4>
+                <button class="btn btn-default" ui-sref="patient.detail.family-history-edit"><i class="fa fa-pencil"></i> Edit</button>
+            </div>
+            <div class="panel-body no-padding">
+                <table class="panel-table table">
+                    <tr>
+                        <td class="top table-label">Maternal</td>
+                        <td class="top">{{vm.patientShellService.currentPatient.familyHistory.maternal || "None recorded."}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

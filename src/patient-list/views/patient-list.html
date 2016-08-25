@@ -1,0 +1,51 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="toolbar row">
+            <div class="col-lg-3">
+                <button class="btn btn-default" ng-click="vm.createPatient()">New Patient</button>
+            </div>
+            <div class="col-lg-3">
+                <input class="form-control pull-right" ng-model="vm.searchString" uib-typeahead="patient.patientId as patient.givenName for patient in vm.searchPatients($viewValue)" placeholder="Search patients" typeahead-on-select="vm.patientSelected($item)" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Today's Patients</h4>
+            </div>
+            <div class="panel-body">
+                <div ng-show="vm.isLoading" class="loader-container">
+                    <i class="fa fa-spinner fa-pulse loader fa-2x"></i>
+                </div>
+                <div ng-hide="vm.isLoading" class="patient-list-item" ng-repeat="patient in vm.patientListService.patientsWithAppointmentToday" ui-sref="patient.detail.demographics-view({patientId: (patient.patientId)})">
+                    <div>
+                        <span class="list-item-name">{{patient.fullName}}</span>
+                    </div>
+                    <div>
+                        <span class="list-item-subtext">{{patient.dateOfBirth | date: 'dd/MM/yyyy'}} ({{patient.age}})</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Open Patients</h4>
+            </div>
+            <div class="panel-body">
+                <div class="patient-list-item" ng-repeat="patient in vm.patientShellService.openPatients" ui-sref="patient.detail({patientId: (patient.patientId)})">
+                    <div>
+                        <span class="list-item-name">{{patient.fullName}}</span>
+                    </div>
+                    <div>
+                        <span class="list-item-subtext">{{patient.dateOfBirth | date: 'dd/MM/yyyy'}} ({{patient.age}})</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

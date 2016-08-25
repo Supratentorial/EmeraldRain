@@ -1,0 +1,41 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <div class="toolbar" role="toolbar">
+            <div class="btn-group" role="group">
+                <label class="btn btn-default" ng-model="shell.selectedView" uib-btn-radio="'Month'">Month</label>
+                <label class="btn btn-default" ng-model="shell.selectedView" uib-btn-radio="'Week'">Week</label>
+                <label class="btn btn-default" ng-model="shell.selectedView" uib-btn-radio="'Day'">Day</label>
+            </div>
+            <div class="btn-group" role="group">
+                <button class="btn btn-default"><i class="fa fa-chevron-left"></i></button>
+                <button class="btn btn-default"><i class="fa fa-chevron-right"></i></button>
+            </div>
+            <div class="pull-right btn-toolbar">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-default" ng-click="shell.zoomIn()"><i class="fa fa-search-plus"></i> Zoom In</button>
+                    <button class="btn btn-default" ng-click="shell.zoomOut()"><i class="fa fa-search-minus"></i> Zoom Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div id="calendar-canvas">
+                    <div id="calendar-time-strip">
+                    </div>
+                    <div ng-show="shell.selectedView ==='Week'" ng-controller="WeekController as week" class="week-container">
+                        <div class="calendar-day" ng-repeat="day in week.days">
+                            <div ng-click="shell.createAppointment()" class="time-slot" ng-style="{'height':  shell.timeSlotService.timeSlotHeight +'em'}" ng-repeat="timeslot in shell.timeSlots"></div>
+                        </div>
+                    </div>
+                    <div ng-show="shell.selectedView ==='Day'">
+                        <div ng-click="shell.createAppointment()" class="time-slot" ng-style="{'height':  shell.timeSlotService.timeSlotHeight +'em'}" ng-repeat="timeslot in shell.timeSlots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

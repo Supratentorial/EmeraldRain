@@ -1,0 +1,70 @@
+﻿@import "_colors.scss";
+@import "_variables.scss";
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "_button-groups.scss";
+@import "_navs.scss";
+@import "_panels.scss";
+@import "_banner.scss";
+@import "_calendar.scss";
+@import "_table.scss";
+@import "_loaders.scss";
+@import "_buttons.scss";
+
+body {
+    background: $md-blue-grey-50;
+    padding-top: 50px;
+}
+
+.active-top-level {
+    color: $md-deep-orange-900 !important;
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
+    background: $md-blue-grey-900;
+}
+
+.list-item-name {
+    font-size: 1.15em;
+}
+
+.list-item-subtext {
+    color: $md-grey-500;
+}
+
+.patient-list-item {
+    cursor: pointer;
+    padding: 0.5em;
+
+    &:hover {
+        background: $md-blue-grey-50;
+        border-left: solid 0.25em $md-deep-orange-800;
+    }
+}
+
+.patient-profile-picture {
+    width: 120px;
+    height: 120px;
+}
+
+.summary-icon{
+    width:30px;
+    margin-bottom:5px;
+}
+
+.banner-icon{
+    width:30px;
+}
+
+.summary-text{
+    font-size: 15px;
+}
+

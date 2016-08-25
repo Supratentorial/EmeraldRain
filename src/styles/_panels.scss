@@ -1,0 +1,22 @@
+﻿.panel-heading {
+    background: $white !important;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    min-height: 30px;
+
+    h4 {
+        flex-grow: 1;
+        font-size: 1.3em;
+    }
+}
+
+.panel {
+    .no-padding {
+        padding: 0;
+    }
+}
+
+
+
+

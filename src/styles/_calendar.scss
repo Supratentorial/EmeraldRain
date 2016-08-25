@@ -1,0 +1,28 @@
+﻿.week-container {
+    display: flex;
+}
+
+.calendar-day {
+    flex: 1;
+}
+
+#calendar-canvas {
+    height: 80vh;
+    overflow-y: auto;
+    margin-left: -15px;
+    margin-bottom: -15px;
+    margin-right: -15px;
+    margin-top: -15px;
+}
+
+.time-slot {
+    background: white;
+    border-right: thin solid $md-grey-300;
+    border-top: thin solid $md-grey-300;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+
+    &:hover {
+        background: $md-blue-grey-50;
+    }
+}

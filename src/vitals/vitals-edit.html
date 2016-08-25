@@ -1,0 +1,92 @@
+﻿<div class="row">
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Vital Signs</h4>
+            </div>
+            <div class="panel-body">
+                <form>
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label class="control-label">Heart rate</label>
+                                <input class="form-control" ng-model="vm.currentVitalSigns.heartRate" />
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label class="control-label">Heart rhythm</label>
+                                <select class="form-control" ng-model="vm.currentVitalSigns.heartRhythm">
+                                    <option value="regular">Regular</option>
+                                    <option value="irregularly irregular">Irregularly irregular</option>
+                                    <option value="regularly irregular">Regularly irregular</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">Systolic blood pressure</label>
+                            <input class="form-control" ng-model="vm.currentVitalSigns.systolicBloodPressure" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">Diastolic blood pressure</label>
+                            <input class="form-control" ng-model="vm.currentVitalSigns.diastolicBloodPressure" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">Patient position</label>
+                            <select class="form-control" ng-model="vm.currentVitalSigns.bloodPressurePatientPosition">
+                                <option value="sitting">Sitting</option>
+                                <option value="lying">Lying</option>
+                                <option value="standing">Standing</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">Respiratory Rate</label>
+                            <input class="form-control" ng-model="vm.currentVitalSigns.respiratoryRate" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">Other Observations</h4>
+            </div>
+            <div class="panel-body">
+                <form>
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">Height</label>
+                            <input class="form-control" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">Weight</label>
+                            <input class="form-control" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label class="control-label">BMI</label>
+                            <input disabled class="form-control" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <button class="btn btn-success btn-lg save-btn" ng-click="vm.saveVitalSigns()"><i class="fa fa-save"></i> Save</button>
+    <button class="btn btn-default btn-lg" ng-click="vm.cancelEdit()">Cancel</button>
+</div>
